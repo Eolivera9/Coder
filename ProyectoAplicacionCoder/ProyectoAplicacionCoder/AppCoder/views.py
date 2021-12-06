@@ -5,3 +5,7 @@ from django.http import HttpResponse
 def inicio(request):
 
     return render(request, 'AppCoder/inicio.html')
+
+def jugadores(request):
+
+    return render(request, 'AppCoder/jugadores.html')
