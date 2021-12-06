@@ -54,7 +54,7 @@ ROOT_URLCONF = 'Proyecto1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["C:/Users/ezequ/PycharmProjects/ProyectoCoder/pruebaCoder1/Proyecto1/Proyecto1/Plantillas/"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

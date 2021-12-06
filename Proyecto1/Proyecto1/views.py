@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from datetime import datetime
-from django.template import Template, Context
+from django.template import Template, Context, loader
 
 def saludo(request):
     return HttpResponse("Soy Ezequiel - Hola Django - Coder")
@@ -26,14 +26,28 @@ def cuantosAniosTengo(Request, nac):
 
 def probandoTemplate(request):
 
-    miHtml = open("C:/Users/ezequ/PycharmProjects/ProyectoCoder/Proyecto1/Proyecto1/Plantillas/template1.html")
+    mejorEstudiante = "Ezequiel Cantarero"
 
-    plantilla = Template(miHtml.read())
+    nota = 9.5
 
-    miHtml.close()
+    fecha = datetime.now()
 
-    miContexto = Context()
+    estudiantesMasSimpaticos = ["Juanse", "Nadia", "Cristo"]
 
-    documento = plantilla.render(miContexto)
+    dicc = {"nombre": mejorEstudiante, "nota": nota, "fechaActual": fecha, "estudiantes": estudiantesMasSimpaticos}
+
+    plantilla = loader.get_template("template1.html")
+
+    #miHtml = open("C:/Users/ezequ/PycharmProjects/ProyectoCoder/pruebaCoder1/Proyecto1/Proyecto1/Plantillas/template1.html")
+
+    #plantilla = Template(miHtml.read())
+
+    #miHtml.close()
+
+    #miContexto = Context(dicc)
+
+    #documento = plantilla.render(miContexto)
+
+    documento = plantilla.render(dicc)
 
     return HttpResponse(documento)

@@ -5,8 +5,18 @@
     <title>-------------GRAN CLASE --------</title>
 </head>
 <body>
-    <h1>Ezquiel---------------</h1>
-    <h2>El finde nos vamos de joda</h2>
 
+    <h3>El mejor estudiante es: {{nombre}}</h3>
+    <h4>Su nota es: {{nota}}</h4>
+    <h5>Fecha: {{fechaActual}}</h5>
+
+    <h1>SIMPATICOS: </h1>  <br>
+    {% for estu in estudiantes %}
+        {% if estu == 'Nadia' %}
+            <p style="color: red">{{estu}} </p>
+         {% else %}
+            <p>{{estu}} </p>
+        {% endif%}
+    {% endfor %}
 </body>
 </html>
