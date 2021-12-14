@@ -15,7 +15,7 @@
         <p>ERROOOOOOR!!!!!!!!!!!!!!!!</p>
 
    {% endif %}
-   <form action="estadioFormulario" method="POST"> {% csrf_token %}
+   <form action="/AppCoder/estadioFormulario" method="POST">{% csrf_token %}
        <!----
        <p>Direccion: <input type="text"  name="direccion"> </p>
 
@@ -26,6 +26,7 @@
            {{ miFormulario.as_table   }}
 
        </table>
+
        <input type="submit"  value="ENVIAR">
 
    </form>
